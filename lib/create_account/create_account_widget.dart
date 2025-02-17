@@ -37,6 +37,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
 
     _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -77,7 +79,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                       children: [
                         Container(
                           width: double.infinity,
-                          height: 140.0,
+                          height: 82.07,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -92,19 +94,25 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'brand.ai',
-                              style: FlutterFlowTheme.of(context)
-                                  .displaySmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .displaySmallFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .displaySmallFamily),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.safePop();
+                                  },
+                                  child: Icon(
+                                    Icons.close_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 34.0,
                                   ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -126,13 +134,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Create an account',
+                                    'Login or Signup with Gala',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .override(
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .headlineLargeFamily,
+                                          fontSize: 24.0,
                                           letterSpacing: 0.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
@@ -525,7 +534,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       text: 'Create Account',
                                       options: FFButtonOptions(
                                         width: double.infinity,
-                                        height: 44.0,
+                                        height: 55.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
@@ -645,7 +654,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       ),
                                       options: FFButtonOptions(
                                         width: double.infinity,
-                                        height: 44.0,
+                                        height: 55.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
@@ -709,7 +718,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
-                                              height: 44.0,
+                                              height: 55.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional

@@ -100,6 +100,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Homepage',
           path: '/homepage',
           builder: (context, params) => HomepageWidget(),
+        ),
+        FFRoute(
+          name: 'Home',
+          path: '/home',
+          builder: (context, params) => HomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -284,17 +289,19 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primary,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/Group_6_(2).png',
-                      width: 300.0,
-                      height: 300.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primary,
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/Group_6_(2).png',
+                          width: 300.0,
+                          height: 300.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;
