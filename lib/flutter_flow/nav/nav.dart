@@ -137,6 +137,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'Register',
+          path: '/Register',
+          builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
+          name: 'PhoneVerificationSMS',
+          path: '/phoneVerificaPhoneSMSCodeVerification',
+          builder: (context, params) => PhoneVerificationSMSWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

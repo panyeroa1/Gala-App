@@ -8,3 +8,6 @@ export '/details_booking/details_booking_widget.dart' show DetailsBookingWidget;
 export '/create_property/create_property_widget.dart' show CreatePropertyWidget;
 export '/create_property2/create_property2_widget.dart'
     show CreateProperty2Widget;
+export '/register/register_widget.dart' show RegisterWidget;
+export '/phone_verification_s_m_s/phone_verification_s_m_s_widget.dart'
+    show PhoneVerificationSMSWidget;
