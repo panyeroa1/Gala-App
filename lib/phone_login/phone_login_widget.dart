@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -47,6 +48,7 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
+    authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -319,14 +321,35 @@ class _PhoneLoginWidgetState extends State<PhoneLoginWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed(
-                              'auth_3_verifyPhone',
-                              queryParameters: {
-                                'phoneNumber': serializeParam(
-                                  _model.textController.text,
-                                  ParamType.String,
+                            final phoneNumberVal =
+                                '+63${_model.textController.text}';
+                            if (phoneNumberVal == null ||
+                                phoneNumberVal.isEmpty ||
+                                !phoneNumberVal.startsWith('+')) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                      'Phone Number is required and has to start with +.'),
                                 ),
-                              }.withoutNulls,
+                              );
+                              return;
+                            }
+                            await authManager.beginPhoneAuth(
+                              context: context,
+                              phoneNumber: phoneNumberVal,
+                              onCodeSent: (context) async {
+                                context.goNamedAuth(
+                                  'auth_3_verifyPhone',
+                                  context.mounted,
+                                  queryParameters: {
+                                    'phoneNumber': serializeParam(
+                                      '+63${_model.textController.text}',
+                                      ParamType.String,
+                                    ),
+                                  }.withoutNulls,
+                                  ignoreRedirect: true,
+                                );
+                              },
                             );
                           },
                           text: 'Continue',

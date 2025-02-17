@@ -19,7 +19,7 @@ export 'auth3_verify_phone_model.dart';
 class Auth3VerifyPhoneWidget extends StatefulWidget {
   const Auth3VerifyPhoneWidget({
     super.key,
-    this.phoneNumber,
+    required this.phoneNumber,
   });
 
   final String? phoneNumber;
@@ -269,66 +269,6 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                           ),
                                         ),
                                       ),
-                                      PinCodeTextField(
-                                        autoDisposeControllers: false,
-                                        appContext: context,
-                                        length: 6,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLargeFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts:
-                                                  GoogleFonts.asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLargeFamily),
-                                            ),
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        enableActiveFill: false,
-                                        autoFocus: true,
-                                        enablePinAutofill: false,
-                                        errorTextSpace: 16.0,
-                                        showCursor: true,
-                                        cursorColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        obscureText: false,
-                                        hintCharacter: '●',
-                                        keyboardType: TextInputType.number,
-                                        pinTheme: PinTheme(
-                                          fieldHeight: 44.0,
-                                          fieldWidth: 44.0,
-                                          borderWidth: 2.0,
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(12.0),
-                                            bottomRight: Radius.circular(12.0),
-                                            topLeft: Radius.circular(12.0),
-                                            topRight: Radius.circular(12.0),
-                                          ),
-                                          shape: PinCodeFieldShape.box,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryText,
-                                          inactiveColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          selectedColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                        ),
-                                        controller: _model.pinCodeController,
-                                        onChanged: (_) {},
-                                        autovalidateMode:
-                                            AutovalidateMode.onUserInteraction,
-                                        validator: _model
-                                            .pinCodeControllerValidator
-                                            .asValidator(context),
-                                      ),
                                       Align(
                                         alignment:
                                             AlignmentDirectional(1.0, -1.0),
@@ -404,6 +344,66 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                             ),
                                           ),
                                         ),
+                                      ),
+                                      PinCodeTextField(
+                                        autoDisposeControllers: false,
+                                        appContext: context,
+                                        length: 6,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily),
+                                            ),
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        enableActiveFill: false,
+                                        autoFocus: true,
+                                        enablePinAutofill: false,
+                                        errorTextSpace: 16.0,
+                                        showCursor: true,
+                                        cursorColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        obscureText: false,
+                                        hintCharacter: '●',
+                                        keyboardType: TextInputType.number,
+                                        pinTheme: PinTheme(
+                                          fieldHeight: 44.0,
+                                          fieldWidth: 44.0,
+                                          borderWidth: 2.0,
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(12.0),
+                                            bottomRight: Radius.circular(12.0),
+                                            topLeft: Radius.circular(12.0),
+                                            topRight: Radius.circular(12.0),
+                                          ),
+                                          shape: PinCodeFieldShape.box,
+                                          activeColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          inactiveColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          selectedColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                        ),
+                                        controller: _model.pinCodeController,
+                                        onChanged: (_) {},
+                                        autovalidateMode:
+                                            AutovalidateMode.onUserInteraction,
+                                        validator: _model
+                                            .pinCodeControllerValidator
+                                            .asValidator(context),
                                       ),
                                     ],
                                   ),
