@@ -82,14 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomepageWidget() : CreateAccountWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? HomepageWidget()
-              : CreateAccountWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
         ),
         FFRoute(
           name: 'CreateAccount',
@@ -97,14 +96,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'Homepage',
-          path: '/homepage',
-          builder: (context, params) => HomepageWidget(),
-        ),
-        FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
+        ),
+        FFRoute(
+          name: 'Profile',
+          path: '/profile',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Profile')
+              : ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'Chat',
+          path: '/chat',
+          builder: (context, params) => ChatWidget(),
+        ),
+        FFRoute(
+          name: 'Inbox',
+          path: '/inbox',
+          builder: (context, params) => InboxWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

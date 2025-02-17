@@ -5,25 +5,25 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'homepage_model.dart';
-export 'homepage_model.dart';
+import 'chat_model.dart';
+export 'chat_model.dart';
 
-class HomepageWidget extends StatefulWidget {
-  const HomepageWidget({super.key});
+class ChatWidget extends StatefulWidget {
+  const ChatWidget({super.key});
 
   @override
-  State<HomepageWidget> createState() => _HomepageWidgetState();
+  State<ChatWidget> createState() => _ChatWidgetState();
 }
 
-class _HomepageWidgetState extends State<HomepageWidget> {
-  late HomepageModel _model;
+class _ChatWidgetState extends State<ChatWidget> {
+  late ChatModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomepageModel());
+    _model = createModel(context, () => ChatModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

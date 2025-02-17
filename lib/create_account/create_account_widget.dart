@@ -529,7 +529,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         }
 
                                         context.goNamedAuth(
-                                            'Homepage', context.mounted);
+                                            'Home', context.mounted);
                                       },
                                       text: 'Create Account',
                                       options: FFButtonOptions(
@@ -645,7 +645,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         }
 
                                         context.goNamedAuth(
-                                            'Homepage', context.mounted);
+                                            'Home', context.mounted);
                                       },
                                       text: 'Continue with Google',
                                       icon: FaIcon(
@@ -709,7 +709,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                               }
 
                                               context.goNamedAuth(
-                                                  'Homepage', context.mounted);
+                                                  'Home', context.mounted);
                                             },
                                             text: 'Continue with Apple',
                                             icon: FaIcon(
