@@ -564,7 +564,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       width: double.infinity,
                       height: 60.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiary,
+                        color: FlutterFlowTheme.of(context).primary,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 5.0,
@@ -575,7 +575,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(12.0),
+                        borderRadius: BorderRadius.circular(25.0),
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
@@ -583,11 +583,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              Icons.power_settings_new,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -599,6 +594,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -607,6 +604,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                 ),
                               ),
+                            ),
+                            Icon(
+                              Icons.power_settings_new,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 24.0,
                             ),
                           ],
                         ),

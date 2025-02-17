@@ -511,6 +511,58 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
+                                        context.pushNamed('auth_3_verifyPhone');
+                                      },
+                                      text: 'Continue with Phone',
+                                      icon: Icon(
+                                        Icons.phone_iphone,
+                                        size: 20.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: double.infinity,
+                                        height: 55.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
+                                            ),
+                                        elevation: 0.0,
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                        hoverColor: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 16.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
                                         GoRouter.of(context).prepareAuthEvent();
                                         final user = await authManager
                                             .signInWithGoogle(context);

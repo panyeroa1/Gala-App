@@ -139,14 +139,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Register',
-          path: '/Register',
-          builder: (context, params) => RegisterWidget(),
+          name: 'PhoneLogin',
+          path: '/phoneLogin',
+          builder: (context, params) => PhoneLoginWidget(),
         ),
         FFRoute(
-          name: 'PhoneVerificationSMS',
-          path: '/phoneVerificaPhoneSMSCodeVerification',
-          builder: (context, params) => PhoneVerificationSMSWidget(),
+          name: 'auth_3_verifyPhone',
+          path: '/auth3VerifyPhone',
+          builder: (context, params) => Auth3VerifyPhoneWidget(
+            phoneNumber: params.getParam(
+              'phoneNumber',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
