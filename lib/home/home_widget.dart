@@ -53,72 +53,75 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: false,
-          leading: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 6.0),
-            child: Container(
-              width: 44.0,
-              height: 44.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).accent1,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: FlutterFlowTheme.of(context).primary,
-                  width: 2.0,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(75.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            automaticallyImplyLeading: false,
+            leading: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 6.0),
+              child: Container(
+                width: 44.0,
+                height: 44.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).accent1,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: FlutterFlowTheme.of(context).primary,
+                    width: 2.0,
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(2.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50.0),
-                  child: Image.network(
-                    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHx1c2VyfGVufDB8fHx8MTczOTcyMTQxMXww&ixlib=rb-4.0.3&q=80&w=1080',
-                    width: 300.0,
-                    height: 200.0,
-                    fit: BoxFit.cover,
+                child: Padding(
+                  padding: EdgeInsets.all(2.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50.0),
+                    child: Image.network(
+                      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHx1c2VyfGVufDB8fHx8MTczOTcyMTQxMXww&ixlib=rb-4.0.3&q=80&w=1080',
+                      width: 300.0,
+                      height: 200.0,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          title: AuthUserStreamWidget(
-            builder: (context) => Text(
-              'Hello ${valueOrDefault<String>(
-                currentUserDisplayName,
-                'Guest!',
-              )}',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily:
-                        FlutterFlowTheme.of(context).headlineMediumFamily,
-                    fontSize: 24.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.w500,
-                    useGoogleFonts: GoogleFonts.asMap().containsKey(
-                        FlutterFlowTheme.of(context).headlineMediumFamily),
-                  ),
-            ),
-          ),
-          actions: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
-              child: FlutterFlowIconButton(
-                borderRadius: 24.0,
-                buttonSize: 40.0,
-                icon: Icon(
-                  Icons.add_circle,
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 32.0,
-                ),
-                onPressed: () async {
-                  context.pushNamed('CreateProperty');
-                },
+            title: AuthUserStreamWidget(
+              builder: (context) => Text(
+                'Hello ${valueOrDefault<String>(
+                  currentUserDisplayName,
+                  'Guest!',
+                )}',
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineMediumFamily,
+                      fontSize: 24.0,
+                      letterSpacing: 0.0,
+                      fontWeight: FontWeight.w500,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineMediumFamily),
+                    ),
               ),
             ),
-          ],
-          centerTitle: false,
-          elevation: 0.0,
+            actions: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                child: FlutterFlowIconButton(
+                  borderRadius: 24.0,
+                  buttonSize: 40.0,
+                  icon: Icon(
+                    Icons.add_circle,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 32.0,
+                  ),
+                  onPressed: () async {
+                    context.pushNamed('CreateProperty');
+                  },
+                ),
+              ),
+            ],
+            centerTitle: false,
+            elevation: 0.0,
+          ),
         ),
         body: SafeArea(
           top: true,
@@ -403,7 +406,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    listViewPropertyRecord.name,
+                                                    valueOrDefault<String>(
+                                                      listViewPropertyRecord
+                                                          .name,
+                                                      'Lawrence Hub',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyLarge
@@ -442,8 +449,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       12.0,
                                                                       0.0),
                                                           child: Text(
-                                                            listViewPropertyRecord
-                                                                .address,
+                                                            valueOrDefault<
+                                                                String>(
+                                                              listViewPropertyRecord
+                                                                  .address,
+                                                              'Makati City',
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelSmall
@@ -474,7 +485,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 28.0,
+                                                            size: 45.0,
                                                           ),
                                                         ),
                                                       ],
@@ -486,7 +497,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             .fromSTEB(0.0, 8.0,
                                                                 12.0, 0.0),
                                                     child: Text(
-                                                      'Price ₱ ${listViewPropertyRecord.pricePerNight.toString()}/night',
+                                                      valueOrDefault<String>(
+                                                        'Price ₱ ${listViewPropertyRecord.pricePerNight.toString()}/night',
+                                                        '/2250',
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
