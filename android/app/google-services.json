@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "580767851656",
+    "firebase_url": "https://ces-project-f8b4e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ces-project-f8b4e",
+    "storage_bucket": "ces-project-f8b4e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580767851656:android:e6b4a7ba317482facdeb3d",
+        "android_client_info": {
+          "package_name": "com.boookingapp.galaph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580767851656-4jmf48m8gmj0u8drculruiru7mct3tg7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boookingapp.galaph",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "580767851656-9ljl5l44dd4sk428r3fs018oq0us8q93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPwaj0KBrMU2Dbm68F6rWo2JDomPIvLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580767851656-9ljl5l44dd4sk428r3fs018oq0us8q93.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "580767851656-afdea02ccqpv73sqqqspe257cg3v149g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.galabooking.ph"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580767851656:android:45ec0e0ebbe4b89fcdeb3d",
+        "android_client_info": {
+          "package_name": "com.galabooking.ph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580767851656-f3q4uj1gq1i7fn92sfmtttpn2of53qv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.galabooking.ph",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "580767851656-9ljl5l44dd4sk428r3fs018oq0us8q93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPwaj0KBrMU2Dbm68F6rWo2JDomPIvLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580767851656-9ljl5l44dd4sk428r3fs018oq0us8q93.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "580767851656-afdea02ccqpv73sqqqspe257cg3v149g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.galabooking.ph"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

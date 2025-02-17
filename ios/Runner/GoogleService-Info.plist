@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>580767851656-afdea02ccqpv73sqqqspe257cg3v149g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.580767851656-afdea02ccqpv73sqqqspe257cg3v149g</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>580767851656-4jmf48m8gmj0u8drculruiru7mct3tg7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCE14ufSXyUXfiP4VcIu3iShrd2P-V-gcw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>580767851656</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.galabooking.ph</string>
+	<key>PROJECT_ID</key>
+	<string>ces-project-f8b4e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ces-project-f8b4e.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:580767851656:ios:e45354e2f0480aa7cdeb3d</string>
+	<key>DATABASE_URL</key>
+	<string>https://ces-project-f8b4e-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
