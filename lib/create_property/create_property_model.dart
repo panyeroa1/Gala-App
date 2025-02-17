@@ -1,3 +1,5 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -7,9 +9,10 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'create_property_widget.dart' show CreatePropertyWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class CreatePropertyModel extends FlutterFlowModel<CreatePropertyWidget> {
@@ -39,31 +42,18 @@ class CreatePropertyModel extends FlutterFlowModel<CreatePropertyWidget> {
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
-  // State field(s) for dateOfBirth widget.
-  FocusNode? dateOfBirthFocusNode;
-  TextEditingController? dateOfBirthTextController;
-  final dateOfBirthMask = MaskTextInputFormatter(mask: '##/##/####');
-  String? Function(BuildContext, String?)? dateOfBirthTextControllerValidator;
-  String? _dateOfBirthTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Please enter the date of birth of the patient.';
-    }
-
-    return null;
-  }
-
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController;
   String? get choiceChipsValue =>
       choiceChipsValueController?.value?.firstOrNull;
   set choiceChipsValue(String? val) =>
       choiceChipsValueController?.value = val != null ? [val] : [];
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PropertyRecord? createingproperty1;
 
   @override
   void initState(BuildContext context) {
     ageTextControllerValidator = _ageTextControllerValidator;
-    dateOfBirthTextControllerValidator = _dateOfBirthTextControllerValidator;
   }
 
   @override
@@ -76,8 +66,5 @@ class CreatePropertyModel extends FlutterFlowModel<CreatePropertyWidget> {
 
     phoneNumberFocusNode?.dispose();
     phoneNumberTextController?.dispose();
-
-    dateOfBirthFocusNode?.dispose();
-    dateOfBirthTextController?.dispose();
   }
 }

@@ -127,8 +127,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateProperty',
           path: '/createProperty',
           builder: (context, params) => CreatePropertyWidget(),
+        ),
+        FFRoute(
+          name: 'CreateProperty2',
+          path: '/CreateProperty2',
+          builder: (context, params) => CreateProperty2Widget(
+            addedvideo: params.getParam(
+              'addedvideo',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
