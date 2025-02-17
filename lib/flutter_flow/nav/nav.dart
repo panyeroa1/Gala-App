@@ -109,14 +109,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : ProfileWidget(),
         ),
         FFRoute(
-          name: 'Chat',
-          path: '/chat',
-          builder: (context, params) => ChatWidget(),
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'Inbox',
-          path: '/inbox',
-          builder: (context, params) => InboxWidget(),
+          name: 'ForgotPassword',
+          path: '/forgotPassword',
+          builder: (context, params) => ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: 'DetailsBooking',
+          path: '/detailsBooking',
+          builder: (context, params) => DetailsBookingWidget(),
+        ),
+        FFRoute(
+          name: 'CreateProperty',
+          path: '/createProperty',
+          builder: (context, params) => CreatePropertyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

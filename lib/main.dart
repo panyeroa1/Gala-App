@@ -167,7 +167,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.directions_car,
-              size: 24.0,
+              size: 32.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -175,7 +175,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.location_history,
-              size: 24.0,
+              size: 32.0,
             ),
             label: 'Profile',
             tooltip: '',
