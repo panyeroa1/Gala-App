@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'auth3_phone_model.dart';
 export 'auth3_phone_model.dart';
@@ -274,7 +273,7 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                                 TextInputAction.send,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: '+63 901 234 5678',
+                                              labelText: 'Phone here...',
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -359,9 +358,6 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                             validator: _model
                                                 .phoneNumberTextControllerValidator
                                                 .asValidator(context),
-                                            inputFormatters: [
-                                              _model.phoneNumberMask
-                                            ],
                                           ),
                                         ),
                                       ),

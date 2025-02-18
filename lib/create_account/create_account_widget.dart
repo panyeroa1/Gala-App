@@ -732,6 +732,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           if (user == null) {
                                             return;
                                           }
+                                          await Future.delayed(const Duration(
+                                              milliseconds: 3000));
 
                                           context.pushNamedAuth(
                                               'Home', context.mounted);
