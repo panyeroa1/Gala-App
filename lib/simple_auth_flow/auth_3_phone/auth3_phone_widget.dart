@@ -163,25 +163,22 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: Container(
-                                          width: 66.25,
-                                          height: 65.0,
-                                          decoration: BoxDecoration(),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.asset(
-                                              'assets/images/Group_6_(2).png',
-                                              width: 147.6,
-                                              height: 155.1,
-                                              fit: BoxFit.contain,
-                                              alignment: Alignment(-1.0, 0.0),
+                                      Text(
+                                        'Gala',
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily),
                                             ),
-                                          ),
-                                        ),
                                       ),
                                     ],
                                   ),
@@ -273,8 +270,6 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                             autofillHints: [
                                               AutofillHints.telephoneNumber
                                             ],
-                                            textCapitalization:
-                                                TextCapitalization.none,
                                             textInputAction:
                                                 TextInputAction.send,
                                             obscureText: false,
@@ -372,127 +367,86 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    1.0, -1.0),
-                                                child: Container(
-                                                  decoration: BoxDecoration(),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 24.0,
-                                                                0.0, 16.0),
-                                                    child: FFButtonWidget(
-                                                      onPressed: () async {
-                                                        final phoneNumberVal =
-                                                            _model
-                                                                .phoneNumberTextController
-                                                                .text;
-                                                        if (phoneNumberVal == null ||
-                                                            phoneNumberVal
-                                                                .isEmpty ||
-                                                            !phoneNumberVal
-                                                                .startsWith(
-                                                                    '+')) {
-                                                          ScaffoldMessenger.of(
-                                                                  context)
-                                                              .showSnackBar(
-                                                            SnackBar(
-                                                              content: Text(
-                                                                  'Phone Number is required and has to start with +.'),
-                                                            ),
-                                                          );
-                                                          return;
-                                                        }
-                                                        await authManager
-                                                            .beginPhoneAuth(
-                                                          context: context,
-                                                          phoneNumber:
-                                                              phoneNumberVal,
-                                                          onCodeSent:
-                                                              (context) async {
-                                                            context.goNamedAuth(
-                                                              'auth_3_verifyPhone',
-                                                              context.mounted,
-                                                              queryParameters: {
-                                                                'phoneNumber':
-                                                                    serializeParam(
-                                                                  _model
-                                                                      .phoneNumberTextController
-                                                                      .text,
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                              }.withoutNulls,
-                                                              ignoreRedirect:
-                                                                  true,
-                                                            );
-                                                          },
-                                                        );
-                                                      },
-                                                      text: 'Continue',
-                                                      options: FFButtonOptions(
-                                                        width: 363.15,
-                                                        height: 55.0,
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmallFamily,
-                                                                  color: Colors
-                                                                      .white,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily),
-                                                                ),
-                                                        elevation: 3.0,
-                                                        borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(12.0),
-                                                      ),
-                                                    ),
+                                            AlignmentDirectional(1.0, -1.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 16.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              final phoneNumberVal = _model
+                                                  .phoneNumberTextController
+                                                  .text;
+                                              if (phoneNumberVal == null ||
+                                                  phoneNumberVal.isEmpty ||
+                                                  !phoneNumberVal
+                                                      .startsWith('+')) {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                        'Phone Number is required and has to start with +.'),
                                                   ),
-                                                ),
+                                                );
+                                                return;
+                                              }
+                                              await authManager.beginPhoneAuth(
+                                                context: context,
+                                                phoneNumber: phoneNumberVal,
+                                                onCodeSent: (context) async {
+                                                  context.goNamedAuth(
+                                                    'auth_3_verifyPhone',
+                                                    context.mounted,
+                                                    queryParameters: {
+                                                      'phoneNumber':
+                                                          serializeParam(
+                                                        _model
+                                                            .phoneNumberTextController
+                                                            .text,
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
+                                                    ignoreRedirect: true,
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            text: 'Continue',
+                                            options: FFButtonOptions(
+                                              width: 200.0,
+                                              height: 55.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
-                                            ],
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
                                           ),
                                         ),
                                       ),

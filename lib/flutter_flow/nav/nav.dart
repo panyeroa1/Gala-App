@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Auth3CreateWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : Auth3CreateWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
         ),
         FFRoute(
           name: 'CreateAccount',
@@ -338,7 +338,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/auth3Create';
+            return '/createAccount';
           }
           return null;
         },

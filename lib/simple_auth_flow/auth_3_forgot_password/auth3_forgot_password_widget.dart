@@ -163,18 +163,8 @@ class _Auth3ForgotPasswordWidgetState extends State<Auth3ForgotPasswordWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 12.0, 0.0),
-                                        child: Icon(
-                                          Icons.flourescent_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 44.0,
-                                        ),
-                                      ),
                                       Text(
-                                        'flow.io',
+                                        'Gala',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -403,7 +393,7 @@ class _Auth3ForgotPasswordWidgetState extends State<Auth3ForgotPasswordWidget>
                                             text: 'Send Reset Link',
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 44.0,
+                                              height: 55.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional

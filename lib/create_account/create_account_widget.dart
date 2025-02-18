@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -546,6 +547,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             return;
                                           }
 
+                                          await UsersRecord.collection
+                                              .doc(user.uid)
+                                              .update(createUsersRecordData(
+                                                photoUrl:
+                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/gala-5zsen3/assets/prr5oq07virp/Group_6_(2).png',
+                                                displayName: 'Guest',
+                                              ));
+
                                           await Future.delayed(const Duration(
                                               milliseconds: 3000));
                                           HapticFeedback.heavyImpact();
@@ -660,8 +669,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          context.pushNamed('auth_3_phone');
                                         },
                                         text: 'Continue with Phone',
                                         icon: Icon(
@@ -724,7 +733,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             return;
                                           }
 
-                                          context.goNamedAuth(
+                                          context.pushNamedAuth(
                                               'Home', context.mounted);
                                         },
                                         text: 'Continue with Google',
@@ -791,7 +800,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                   return;
                                                 }
 
-                                                context.goNamedAuth(
+                                                context.pushNamedAuth(
                                                     'Home', context.mounted);
                                               },
                                               text: 'Continue with Apple',

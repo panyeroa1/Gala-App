@@ -105,15 +105,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    child: Image.asset(
-                                      'assets/images/Group_6_(2).png',
-                                      width: 200.0,
-                                      height: 200.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
                                 ),
                               ],
                             ),
@@ -510,8 +501,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('auth_3_phone');
                                       },
                                       text: 'Continue with Phone',
                                       icon: Icon(
@@ -570,7 +561,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           return;
                                         }
 
-                                        context.goNamedAuth(
+                                        context.pushNamedAuth(
                                             'Home', context.mounted);
                                       },
                                       text: 'Continue with Google',
@@ -634,7 +625,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 return;
                                               }
 
-                                              context.goNamedAuth(
+                                              context.pushNamedAuth(
                                                   'Home', context.mounted);
                                             },
                                             text: 'Continue with Apple',

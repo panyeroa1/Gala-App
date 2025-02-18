@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -167,18 +168,8 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 12.0, 0.0),
-                                        child: Icon(
-                                          Icons.flourescent_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 44.0,
-                                        ),
-                                      ),
                                       Text(
-                                        'flow.io',
+                                        'Gala',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -641,13 +632,21 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                                 return;
                                               }
 
+                                              await UsersRecord.collection
+                                                  .doc(user.uid)
+                                                  .update(createUsersRecordData(
+                                                    photoUrl:
+                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/gala-5zsen3/assets/prr5oq07virp/Group_6_(2).png',
+                                                    displayName: 'Guest',
+                                                  ));
+
                                               context.goNamedAuth(
                                                   'Home', context.mounted);
                                             },
                                             text: 'Create Account',
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 44.0,
+                                              height: 55.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
@@ -830,7 +829,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                           ),
                                           options: FFButtonOptions(
                                             width: double.infinity,
-                                            height: 44.0,
+                                            height: 55.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),

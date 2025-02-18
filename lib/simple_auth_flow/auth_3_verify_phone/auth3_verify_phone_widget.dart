@@ -165,20 +165,22 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Container(
-                                        width: 65.0,
-                                        height: 65.0,
-                                        decoration: BoxDecoration(),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.asset(
-                                            'assets/images/Group_6_(2).png',
-                                            width: 200.0,
-                                            height: 200.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                      Text(
+                                        'Gala',
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily),
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -218,31 +220,26 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                           },
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 25.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Verification Code',
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmallFamily,
-                                                fontSize: 24.0,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displaySmallFamily),
-                                              ),
-                                        ),
+                                      Text(
+                                        'Verification Code',
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displaySmallFamily),
+                                            ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 24.0, 0.0, 24.0),
+                                            0.0, 4.0, 0.0, 24.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -296,71 +293,65 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 25.0),
-                                        child: PinCodeTextField(
-                                          autoDisposeControllers: false,
-                                          appContext: context,
-                                          length: 6,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyLarge
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLargeFamily,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyLargeFamily),
-                                              ),
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          enableActiveFill: false,
-                                          autoFocus: true,
-                                          enablePinAutofill: false,
-                                          errorTextSpace: 16.0,
-                                          showCursor: true,
-                                          cursorColor:
+                                      PinCodeTextField(
+                                        autoDisposeControllers: false,
+                                        appContext: context,
+                                        length: 6,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily),
+                                            ),
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        enableActiveFill: true,
+                                        autoFocus: true,
+                                        enablePinAutofill: true,
+                                        errorTextSpace: 16.0,
+                                        showCursor: true,
+                                        cursorColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                        obscureText: false,
+                                        hintCharacter: '-',
+                                        keyboardType: TextInputType.number,
+                                        pinTheme: PinTheme(
+                                          fieldHeight: 55.0,
+                                          fieldWidth: 55.0,
+                                          borderWidth: 2.0,
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(12.0),
+                                            bottomRight: Radius.circular(12.0),
+                                            topLeft: Radius.circular(12.0),
+                                            topRight: Radius.circular(12.0),
+                                          ),
+                                          shape: PinCodeFieldShape.box,
+                                          activeColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryText,
+                                          inactiveColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          selectedColor:
                                               FlutterFlowTheme.of(context)
                                                   .primary,
-                                          obscureText: false,
-                                          hintCharacter: '●',
-                                          keyboardType: TextInputType.number,
-                                          pinTheme: PinTheme(
-                                            fieldHeight: 44.0,
-                                            fieldWidth: 44.0,
-                                            borderWidth: 2.0,
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(12.0),
-                                              bottomRight:
-                                                  Radius.circular(12.0),
-                                              topLeft: Radius.circular(12.0),
-                                              topRight: Radius.circular(12.0),
-                                            ),
-                                            shape: PinCodeFieldShape.box,
-                                            activeColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            inactiveColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            selectedColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                          ),
-                                          controller: _model.pinCodeController,
-                                          onChanged: (_) {},
-                                          autovalidateMode: AutovalidateMode
-                                              .onUserInteraction,
-                                          validator: _model
-                                              .pinCodeControllerValidator
-                                              .asValidator(context),
                                         ),
+                                        controller: _model.pinCodeController,
+                                        onChanged: (_) {},
+                                        autovalidateMode:
+                                            AutovalidateMode.onUserInteraction,
+                                        validator: _model
+                                            .pinCodeControllerValidator
+                                            .asValidator(context),
                                       ),
                                       Align(
                                         alignment:
@@ -401,7 +392,7 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                             },
                                             text: 'Verify Code',
                                             options: FFButtonOptions(
-                                              width: 373.85,
+                                              width: 200.0,
                                               height: 55.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),

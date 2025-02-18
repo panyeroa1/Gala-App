@@ -144,7 +144,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget>
                                 child: Image.network(
                                   path,
                                   width: 300.0,
-                                  height: 300.0,
+                                  height: 220.0,
                                   fit: BoxFit.cover,
                                 ),
                               ),
