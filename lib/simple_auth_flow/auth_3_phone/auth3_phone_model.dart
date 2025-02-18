@@ -20,7 +20,7 @@ class Auth3PhoneModel extends FlutterFlowModel<Auth3PhoneWidget> {
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
-  final phoneNumberMask = MaskTextInputFormatter(mask: '+# (###) ###-##-##');
+  final phoneNumberMask = MaskTextInputFormatter(mask: '+63 901 234 5678');
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
 
   @override

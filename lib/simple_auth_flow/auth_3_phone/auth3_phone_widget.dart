@@ -274,7 +274,7 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                                 TextInputAction.send,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Your phone number...',
+                                              labelText: '+63 901 234 5678',
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
