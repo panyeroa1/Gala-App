@@ -18,3 +18,7 @@ export '/simple_auth_flow/auth_3_verify_phone/auth3_verify_phone_widget.dart'
     show Auth3VerifyPhoneWidget;
 export '/simple_auth_flow/auth_3_forgot_password/auth3_forgot_password_widget.dart'
     show Auth3ForgotPasswordWidget;
+export '/details_video/details_video_widget.dart' show DetailsVideoWidget;
+export '/reviews/reviews_widget.dart' show ReviewsWidget;
+export '/details_property_listing/details_property_listing_widget.dart'
+    show DetailsPropertyListingWidget;

@@ -167,6 +167,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'auth_3_ForgotPassword',
           path: '/auth3ForgotPassword',
           builder: (context, params) => Auth3ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: 'DetailsVideo',
+          path: '/detailsVideo',
+          builder: (context, params) => DetailsVideoWidget(),
+        ),
+        FFRoute(
+          name: 'Reviews',
+          path: '/reviews',
+          builder: (context, params) => ReviewsWidget(),
+        ),
+        FFRoute(
+          name: 'DetailsPropertyListing',
+          path: '/detailsPropertyListing',
+          builder: (context, params) => DetailsPropertyListingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
