@@ -82,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : Auth3CreateWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : Auth3CreateWidget(),
         ),
         FFRoute(
           name: 'CreateAccount',
@@ -139,9 +139,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'PhoneLogin',
-          path: '/phoneLogin',
-          builder: (context, params) => PhoneLoginWidget(),
+          name: 'auth_3_Create',
+          path: '/auth3Create',
+          builder: (context, params) => Auth3CreateWidget(),
+        ),
+        FFRoute(
+          name: 'auth_3_Login',
+          path: '/auth3Login',
+          builder: (context, params) => Auth3LoginWidget(),
+        ),
+        FFRoute(
+          name: 'auth_3_phone',
+          path: '/auth3Phone',
+          builder: (context, params) => Auth3PhoneWidget(),
         ),
         FFRoute(
           name: 'auth_3_verifyPhone',
@@ -152,6 +162,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'auth_3_ForgotPassword',
+          path: '/auth3ForgotPassword',
+          builder: (context, params) => Auth3ForgotPasswordWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -323,7 +338,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/createAccount';
+            return '/auth3Create';
           }
           return null;
         },

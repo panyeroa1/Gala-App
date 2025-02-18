@@ -660,8 +660,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          context.pushNamed('PhoneLogin');
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text: 'Continue with Phone',
                                         icon: Icon(

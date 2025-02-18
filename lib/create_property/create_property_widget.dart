@@ -697,6 +697,10 @@ class _CreatePropertyWidgetState extends State<CreatePropertyWidget> {
                                 ),
                                 propertyRecordReference);
                         HapticFeedback.mediumImpact();
+                        await Future.delayed(
+                            const Duration(milliseconds: 4000));
+
+                        context.pushNamed('Home');
 
                         safeSetState(() {});
                       },
