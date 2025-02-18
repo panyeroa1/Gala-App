@@ -121,22 +121,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'DetailsBooking',
           path: '/detailsBooking',
-          builder: (context, params) => DetailsBookingWidget(),
+          builder: (context, params) => DetailsBookingWidget(
+            propertytoccheck: params.getParam(
+              'propertytoccheck',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['property'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'CreateProperty',
           path: '/createProperty',
           builder: (context, params) => CreatePropertyWidget(),
-        ),
-        FFRoute(
-          name: 'CreateProperty2',
-          path: '/CreateProperty2',
-          builder: (context, params) => CreateProperty2Widget(
-            addedvideo: params.getParam(
-              'addedvideo',
-              ParamType.String,
-            ),
-          ),
         ),
         FFRoute(
           name: 'auth_3_Create',
@@ -171,7 +168,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'DetailsVideo',
           path: '/detailsVideo',
-          builder: (context, params) => DetailsVideoWidget(),
+          asyncParams: {
+            'propertydetails':
+                getDoc(['property'], PropertyRecord.fromSnapshot),
+          },
+          builder: (context, params) => DetailsVideoWidget(
+            propertydetails: params.getParam(
+              'propertydetails',
+              ParamType.Document,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Reviews',

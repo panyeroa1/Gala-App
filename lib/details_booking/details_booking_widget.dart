@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +13,12 @@ import 'details_booking_model.dart';
 export 'details_booking_model.dart';
 
 class DetailsBookingWidget extends StatefulWidget {
-  const DetailsBookingWidget({super.key});
+  const DetailsBookingWidget({
+    super.key,
+    required this.propertytoccheck,
+  });
+
+  final DocumentReference? propertytoccheck;
 
   @override
   State<DetailsBookingWidget> createState() => _DetailsBookingWidgetState();

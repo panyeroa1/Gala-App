@@ -136,6 +136,11 @@ class PropertyRecord extends FirestoreRecord {
   String get image8 => _image8 ?? '';
   bool hasImage8() => _image8 != null;
 
+  // "video" field.
+  String? _video;
+  String get video => _video ?? '';
+  bool hasVideo() => _video != null;
+
   void _initializeFields() {
     _id = snapshotData['id'] as String?;
     _name = snapshotData['name'] as String?;
@@ -161,6 +166,7 @@ class PropertyRecord extends FirestoreRecord {
     _image6 = snapshotData['Image6'] as String?;
     _image7 = snapshotData['Image7'] as String?;
     _image8 = snapshotData['Image8'] as String?;
+    _video = snapshotData['video'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -222,6 +228,7 @@ Map<String, dynamic> createPropertyRecordData({
   String? image6,
   String? image7,
   String? image8,
+  String? video,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -249,6 +256,7 @@ Map<String, dynamic> createPropertyRecordData({
       'Image6': image6,
       'Image7': image7,
       'Image8': image8,
+      'video': video,
     }.withoutNulls,
   );
 
@@ -283,7 +291,8 @@ class PropertyRecordDocumentEquality implements Equality<PropertyRecord> {
         e1?.image5 == e2?.image5 &&
         e1?.image6 == e2?.image6 &&
         e1?.image7 == e2?.image7 &&
-        e1?.image8 == e2?.image8;
+        e1?.image8 == e2?.image8 &&
+        e1?.video == e2?.video;
   }
 
   @override
@@ -311,7 +320,8 @@ class PropertyRecordDocumentEquality implements Equality<PropertyRecord> {
         e?.image5,
         e?.image6,
         e?.image7,
-        e?.image8
+        e?.image8,
+        e?.video
       ]);
 
   @override

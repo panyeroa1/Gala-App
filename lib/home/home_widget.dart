@@ -348,7 +348,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  context.pushNamed('DetailsBooking');
+                                  context.pushNamed(
+                                    'DetailsVideo',
+                                    queryParameters: {
+                                      'propertydetails': serializeParam(
+                                        listViewPropertyRecord,
+                                        ParamType.Document,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'propertydetails': listViewPropertyRecord,
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.topToBottom,
+                                      ),
+                                    },
+                                  );
                                 },
                                 child: ClipRRect(
                                   child: Container(
