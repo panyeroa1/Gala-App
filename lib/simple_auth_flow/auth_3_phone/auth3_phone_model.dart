@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class Auth3PhoneModel extends FlutterFlowModel<Auth3PhoneWidget> {
@@ -20,6 +21,7 @@ class Auth3PhoneModel extends FlutterFlowModel<Auth3PhoneWidget> {
   // State field(s) for phoneNumber widget.
   FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberTextController;
+  final phoneNumberMask = MaskTextInputFormatter(mask: '+## ### ### ####');
   String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
 
   @override
