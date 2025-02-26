@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,6 +15,9 @@ export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({super.key});
+
+  static String routeName = 'Profile';
+  static String routePath = '/profile';
 
   @override
   State<ProfileWidget> createState() => _ProfileWidgetState();
@@ -150,7 +154,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
-                                    currentUserDisplayName,
+                                    valueOrDefault<String>(
+                                      currentUserDisplayName,
+                                      'Guest',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -558,7 +565,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
                       HapticFeedback.vibrate();
 
-                      context.pushNamedAuth('Login', context.mounted);
+                      context.pushNamedAuth(
+                          LoginWidget.routeName, context.mounted);
                     },
                     child: Container(
                       width: double.infinity,

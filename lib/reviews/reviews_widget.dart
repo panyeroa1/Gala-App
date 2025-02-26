@@ -13,6 +13,9 @@ export 'reviews_model.dart';
 class ReviewsWidget extends StatefulWidget {
   const ReviewsWidget({super.key});
 
+  static String routeName = 'Reviews';
+  static String routePath = '/reviews';
+
   @override
   State<ReviewsWidget> createState() => _ReviewsWidgetState();
 }

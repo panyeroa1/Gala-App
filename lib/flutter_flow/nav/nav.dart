@@ -8,13 +8,14 @@ import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/lat_lng.dart';
 import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'serialization_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -91,36 +92,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'CreateAccount',
-          path: '/createAccount',
+          name: CreateAccountWidget.routeName,
+          path: CreateAccountWidget.routePath,
           builder: (context, params) => CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'Home',
-          path: '/home',
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
-          name: 'Profile',
-          path: '/profile',
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Profile')
               : ProfileWidget(),
         ),
         FFRoute(
-          name: 'Login',
-          path: '/login',
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'ForgotPassword',
-          path: '/forgotPassword',
+          name: ForgotPasswordWidget.routeName,
+          path: ForgotPasswordWidget.routePath,
           builder: (context, params) => ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'DetailsBooking',
-          path: '/detailsBooking',
+          name: DetailsBookingWidget.routeName,
+          path: DetailsBookingWidget.routePath,
           builder: (context, params) => DetailsBookingWidget(
             propertytoccheck: params.getParam(
               'propertytoccheck',
@@ -131,28 +132,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'CreateProperty',
-          path: '/createProperty',
+          name: CreatePropertyWidget.routeName,
+          path: CreatePropertyWidget.routePath,
           builder: (context, params) => CreatePropertyWidget(),
         ),
         FFRoute(
-          name: 'auth_3_Create',
-          path: '/auth3Create',
+          name: Auth3CreateWidget.routeName,
+          path: Auth3CreateWidget.routePath,
           builder: (context, params) => Auth3CreateWidget(),
         ),
         FFRoute(
-          name: 'auth_3_Login',
-          path: '/auth3Login',
+          name: Auth3LoginWidget.routeName,
+          path: Auth3LoginWidget.routePath,
           builder: (context, params) => Auth3LoginWidget(),
         ),
         FFRoute(
-          name: 'auth_3_phone',
-          path: '/auth3Phone',
+          name: Auth3PhoneWidget.routeName,
+          path: Auth3PhoneWidget.routePath,
           builder: (context, params) => Auth3PhoneWidget(),
         ),
         FFRoute(
-          name: 'auth_3_verifyPhone',
-          path: '/auth3VerifyPhone',
+          name: Auth3VerifyPhoneWidget.routeName,
+          path: Auth3VerifyPhoneWidget.routePath,
           builder: (context, params) => Auth3VerifyPhoneWidget(
             phoneNumber: params.getParam(
               'phoneNumber',
@@ -161,13 +162,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'auth_3_ForgotPassword',
-          path: '/auth3ForgotPassword',
+          name: Auth3ForgotPasswordWidget.routeName,
+          path: Auth3ForgotPasswordWidget.routePath,
           builder: (context, params) => Auth3ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'DetailsVideo',
-          path: '/detailsVideo',
+          name: DetailsVideoWidget.routeName,
+          path: DetailsVideoWidget.routePath,
           asyncParams: {
             'propertydetails':
                 getDoc(['property'], PropertyRecord.fromSnapshot),
@@ -180,13 +181,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Reviews',
-          path: '/reviews',
+          name: ReviewsWidget.routeName,
+          path: ReviewsWidget.routePath,
           builder: (context, params) => ReviewsWidget(),
         ),
         FFRoute(
-          name: 'DetailsPropertyListing',
-          path: '/detailsPropertyListing',
+          name: DetailsPropertyListingWidget.routeName,
+          path: DetailsPropertyListingWidget.routePath,
           builder: (context, params) => DetailsPropertyListingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,9 @@ export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
+
+  static String routeName = 'Home';
+  static String routePath = '/home';
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
@@ -114,7 +118,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     size: 32.0,
                   ),
                   onPressed: () async {
-                    context.pushNamed('CreateProperty');
+                    context.pushNamed(CreatePropertyWidget.routeName);
                   },
                 ),
               ),
@@ -349,7 +353,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'DetailsVideo',
+                                    DetailsVideoWidget.routeName,
                                     queryParameters: {
                                       'propertydetails': serializeParam(
                                         listViewPropertyRecord,
@@ -397,11 +401,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 child: Image.network(
-                                                  valueOrDefault<String>(
-                                                    listViewPropertyRecord
-                                                        .image1,
-                                                    'https://res.cloudinary.com/simpleview/image/upload/v1686072977/clients/milwaukee/VM_Hilton_Plaza_Suite_King_Room_9b5d673a-95c6-445e-ad6b-5ae85e260f18.jpg',
-                                                  ),
+                                                  'https://images.unsplash.com/photo-1455587734955-081b22074882?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxob3RlbHxlbnwwfHx8fDE3Mzk4NDYwNjZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                   width: 120.0,
                                                   height: 120.0,
                                                   fit: BoxFit.cover,

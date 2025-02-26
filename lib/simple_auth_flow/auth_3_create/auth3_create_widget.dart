@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -17,6 +18,9 @@ export 'auth3_create_model.dart';
 
 class Auth3CreateWidget extends StatefulWidget {
   const Auth3CreateWidget({super.key});
+
+  static String routeName = 'auth_3_Create';
+  static String routePath = '/auth3Create';
 
   @override
   State<Auth3CreateWidget> createState() => _Auth3CreateWidgetState();
@@ -641,7 +645,8 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                                   ));
 
                                               context.goNamedAuth(
-                                                  'Home', context.mounted);
+                                                  HomeWidget.routeName,
+                                                  context.mounted);
                                             },
                                             text: 'Create Account',
                                             options: FFButtonOptions(
@@ -694,7 +699,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'auth_3_Login',
+                                              Auth3LoginWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -809,7 +814,7 @@ class _Auth3CreateWidgetState extends State<Auth3CreateWidget>
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             context.pushNamed(
-                                              'auth_3_phone',
+                                              Auth3PhoneWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(

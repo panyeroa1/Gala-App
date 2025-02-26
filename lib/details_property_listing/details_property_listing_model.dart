@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/lat_lng.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'details_property_listing_widget.dart' show DetailsPropertyListingWidget;
 import 'package:mapbox_search/mapbox_search.dart' as mapbox;
 import 'package:flutter/gestures.dart';

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/lat_lng.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:mapbox_search/mapbox_search.dart' as mapbox;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,9 @@ export 'details_property_listing_model.dart';
 
 class DetailsPropertyListingWidget extends StatefulWidget {
   const DetailsPropertyListingWidget({super.key});
+
+  static String routeName = 'DetailsPropertyListing';
+  static String routePath = '/detailsPropertyListing';
 
   @override
   State<DetailsPropertyListingWidget> createState() =>
@@ -136,7 +140,7 @@ class _DetailsPropertyListingWidgetState
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('Home');
+              context.pushNamed(HomeWidget.routeName);
             },
           ),
           actions: [],

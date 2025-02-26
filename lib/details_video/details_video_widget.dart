@@ -24,6 +24,9 @@ class DetailsVideoWidget extends StatefulWidget {
 
   final PropertyRecord? propertydetails;
 
+  static String routeName = 'DetailsVideo';
+  static String routePath = '/detailsVideo';
+
   @override
   State<DetailsVideoWidget> createState() => _DetailsVideoWidgetState();
 }

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'auth3_create_widget.dart' show Auth3CreateWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

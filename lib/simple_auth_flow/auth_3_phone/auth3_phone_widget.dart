@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,6 +17,9 @@ export 'auth3_phone_model.dart';
 
 class Auth3PhoneWidget extends StatefulWidget {
   const Auth3PhoneWidget({super.key});
+
+  static String routeName = 'auth_3_phone';
+  static String routePath = '/auth3Phone';
 
   @override
   State<Auth3PhoneWidget> createState() => _Auth3PhoneWidgetState();
@@ -267,7 +271,8 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                                 _model.phoneNumberFocusNode,
                                             autofocus: true,
                                             autofillHints: [
-                                              AutofillHints.telephoneNumber
+                                              AutofillHints
+                                                  .telephoneNumberCountryCode
                                             ],
                                             textInputAction:
                                                 TextInputAction.send,
@@ -391,7 +396,8 @@ class _Auth3PhoneWidgetState extends State<Auth3PhoneWidget>
                                                 phoneNumber: phoneNumberVal,
                                                 onCodeSent: (context) async {
                                                   context.goNamedAuth(
-                                                    'auth_3_verifyPhone',
+                                                    Auth3VerifyPhoneWidget
+                                                        .routeName,
                                                     context.mounted,
                                                     queryParameters: {
                                                       'phoneNumber':

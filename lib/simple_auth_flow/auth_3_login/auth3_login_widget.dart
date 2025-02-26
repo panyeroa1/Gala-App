@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -16,6 +17,9 @@ export 'auth3_login_model.dart';
 
 class Auth3LoginWidget extends StatefulWidget {
   const Auth3LoginWidget({super.key});
+
+  static String routeName = 'auth_3_Login';
+  static String routePath = '/auth3Login';
 
   @override
   State<Auth3LoginWidget> createState() => _Auth3LoginWidgetState();
@@ -488,7 +492,8 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                               }
 
                                               context.goNamedAuth(
-                                                  'Home', context.mounted);
+                                                  HomeWidget.routeName,
+                                                  context.mounted);
                                             },
                                             text: 'Login',
                                             options: FFButtonOptions(
@@ -541,7 +546,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              'auth_3_Create',
+                                              Auth3CreateWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -656,7 +661,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             context.pushNamed(
-                                              'auth_3_phone',
+                                              Auth3PhoneWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -742,7 +747,7 @@ class _Auth3LoginWidgetState extends State<Auth3LoginWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'auth_3_ForgotPassword',
+                                      Auth3ForgotPasswordWidget.routeName,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

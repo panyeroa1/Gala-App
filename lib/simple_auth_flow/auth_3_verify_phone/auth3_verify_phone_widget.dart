@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import 'dart:ui';
+import '/index.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,9 @@ class Auth3VerifyPhoneWidget extends StatefulWidget {
 
   final String? phoneNumber;
 
+  static String routeName = 'auth_3_verifyPhone';
+  static String routePath = '/auth3VerifyPhone';
+
   @override
   State<Auth3VerifyPhoneWidget> createState() => _Auth3VerifyPhoneWidgetState();
 }
@@ -40,6 +44,8 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => Auth3VerifyPhoneModel());
+
+    _model.pinCodeFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -315,6 +321,7 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                             MainAxisAlignment.spaceBetween,
                                         enableActiveFill: true,
                                         autoFocus: true,
+                                        focusNode: _model.pinCodeFocusNode,
                                         enablePinAutofill: true,
                                         errorTextSpace: 16.0,
                                         showCursor: true,
@@ -388,7 +395,8 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                               }
 
                                               context.goNamedAuth(
-                                                  'Home', context.mounted);
+                                                  HomeWidget.routeName,
+                                                  context.mounted);
                                             },
                                             text: 'Verify Code',
                                             options: FFButtonOptions(

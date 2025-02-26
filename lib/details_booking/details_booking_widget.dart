@@ -20,6 +20,9 @@ class DetailsBookingWidget extends StatefulWidget {
 
   final DocumentReference? propertytoccheck;
 
+  static String routeName = 'DetailsBooking';
+  static String routePath = '/detailsBooking';
+
   @override
   State<DetailsBookingWidget> createState() => _DetailsBookingWidgetState();
 }

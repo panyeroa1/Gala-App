@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,9 @@ export 'login_model.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
+
+  static String routeName = 'Login';
+  static String routePath = '/login';
 
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
@@ -394,7 +398,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             const Duration(milliseconds: 2000));
 
                                         context.pushNamedAuth(
-                                            'Home', context.mounted);
+                                            HomeWidget.routeName,
+                                            context.mounted);
                                       },
                                       text: 'Sign In',
                                       options: FFButtonOptions(
@@ -502,7 +507,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('auth_3_phone');
+                                        context.pushNamed(
+                                            Auth3PhoneWidget.routeName);
                                       },
                                       text: 'Continue with Phone',
                                       icon: Icon(
@@ -562,7 +568,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         }
 
                                         context.pushNamedAuth(
-                                            'Home', context.mounted);
+                                            HomeWidget.routeName,
+                                            context.mounted);
                                       },
                                       text: 'Continue with Google',
                                       icon: FaIcon(
@@ -626,7 +633,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               }
 
                                               context.pushNamedAuth(
-                                                  'Home', context.mounted);
+                                                  HomeWidget.routeName,
+                                                  context.mounted);
                                             },
                                             text: 'Continue with Apple',
                                             icon: FaIcon(
@@ -691,7 +699,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('CreateAccount');
+                                          context.pushNamed(
+                                              CreateAccountWidget.routeName);
                                         },
                                         child: RichText(
                                           textScaler:
