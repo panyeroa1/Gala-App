@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,6 +15,9 @@ export 'profile_model.dart';
 
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({super.key});
+
+  static String routeName = 'Profile';
+  static String routePath = '/profile';
 
   @override
   State<ProfileWidget> createState() => _ProfileWidgetState();
@@ -150,7 +154,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 AuthUserStreamWidget(
                                   builder: (context) => Text(
-                                    currentUserDisplayName,
+                                    valueOrDefault<String>(
+                                      currentUserDisplayName,
+                                      'Guest',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -545,7 +552,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 25.0, 16.0, 12.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -558,13 +565,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
                       HapticFeedback.vibrate();
 
-                      context.pushNamedAuth('Login', context.mounted);
+                      context.pushNamedAuth(
+                          LoginWidget.routeName, context.mounted);
                     },
                     child: Container(
                       width: double.infinity,
                       height: 60.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).tertiary,
+                        color: FlutterFlowTheme.of(context).primary,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 5.0,
@@ -575,7 +583,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(12.0),
+                        borderRadius: BorderRadius.circular(25.0),
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
@@ -583,11 +591,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              Icons.power_settings_new,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -599,6 +602,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -607,6 +612,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                 ),
                               ),
+                            ),
+                            Icon(
+                              Icons.power_settings_new,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              size: 24.0,
                             ),
                           ],
                         ),

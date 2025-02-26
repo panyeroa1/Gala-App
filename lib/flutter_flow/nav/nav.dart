@@ -8,13 +8,14 @@ import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/lat_lng.dart';
 import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'serialization_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -91,52 +92,133 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? NavBarPage() : CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'CreateAccount',
-          path: '/createAccount',
+          name: CreateAccountWidget.routeName,
+          path: CreateAccountWidget.routePath,
           builder: (context, params) => CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'Home',
-          path: '/home',
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
           builder: (context, params) =>
               params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
-          name: 'Profile',
-          path: '/profile',
+          name: ProfileWidget.routeName,
+          path: ProfileWidget.routePath,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'Profile')
               : ProfileWidget(),
         ),
         FFRoute(
-          name: 'Login',
-          path: '/login',
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'ForgotPassword',
-          path: '/forgotPassword',
+          name: ForgotPasswordWidget.routeName,
+          path: ForgotPasswordWidget.routePath,
           builder: (context, params) => ForgotPasswordWidget(),
         ),
         FFRoute(
-          name: 'DetailsBooking',
-          path: '/detailsBooking',
-          builder: (context, params) => DetailsBookingWidget(),
+          name: DetailsBookingWidget.routeName,
+          path: DetailsBookingWidget.routePath,
+          builder: (context, params) => DetailsBookingWidget(
+            propertytoccheck: params.getParam(
+              'propertytoccheck',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['property'],
+            ),
+          ),
         ),
         FFRoute(
-          name: 'CreateProperty',
-          path: '/createProperty',
+          name: CreatePropertyWidget.routeName,
+          path: CreatePropertyWidget.routePath,
           builder: (context, params) => CreatePropertyWidget(),
         ),
         FFRoute(
-          name: 'CreateProperty2',
-          path: '/CreateProperty2',
-          builder: (context, params) => CreateProperty2Widget(
-            addedvideo: params.getParam(
-              'addedvideo',
+          name: Auth3CreateWidget.routeName,
+          path: Auth3CreateWidget.routePath,
+          builder: (context, params) => Auth3CreateWidget(),
+        ),
+        FFRoute(
+          name: Auth3LoginWidget.routeName,
+          path: Auth3LoginWidget.routePath,
+          builder: (context, params) => Auth3LoginWidget(),
+        ),
+        FFRoute(
+          name: Auth3PhoneWidget.routeName,
+          path: Auth3PhoneWidget.routePath,
+          builder: (context, params) => Auth3PhoneWidget(),
+        ),
+        FFRoute(
+          name: Auth3VerifyPhoneWidget.routeName,
+          path: Auth3VerifyPhoneWidget.routePath,
+          builder: (context, params) => Auth3VerifyPhoneWidget(
+            phoneNumber: params.getParam(
+              'phoneNumber',
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: Auth3ForgotPasswordWidget.routeName,
+          path: Auth3ForgotPasswordWidget.routePath,
+          builder: (context, params) => Auth3ForgotPasswordWidget(),
+        ),
+        FFRoute(
+          name: DetailsVideoWidget.routeName,
+          path: DetailsVideoWidget.routePath,
+          asyncParams: {
+            'propertydetails':
+                getDoc(['property'], PropertyRecord.fromSnapshot),
+          },
+          builder: (context, params) => DetailsVideoWidget(
+            propertydetails: params.getParam(
+              'propertydetails',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ReviewsWidget.routeName,
+          path: ReviewsWidget.routePath,
+          builder: (context, params) => ReviewsWidget(),
+        ),
+        FFRoute(
+          name: DetailsPropertyListingWidget.routeName,
+          path: DetailsPropertyListingWidget.routePath,
+          builder: (context, params) => DetailsPropertyListingWidget(),
+        ),
+        FFRoute(
+          name: Auth3Create1Widget.routeName,
+          path: Auth3Create1Widget.routePath,
+          builder: (context, params) => Auth3Create1Widget(),
+        ),
+        FFRoute(
+          name: Auth3Login1Widget.routeName,
+          path: Auth3Login1Widget.routePath,
+          builder: (context, params) => Auth3Login1Widget(),
+        ),
+        FFRoute(
+          name: Auth3Phone1Widget.routeName,
+          path: Auth3Phone1Widget.routePath,
+          builder: (context, params) => Auth3Phone1Widget(),
+        ),
+        FFRoute(
+          name: Auth3VerifyPhone1Widget.routeName,
+          path: Auth3VerifyPhone1Widget.routePath,
+          builder: (context, params) => Auth3VerifyPhone1Widget(
+            phoneNumber: params.getParam(
+              'phoneNumber',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: Auth3ForgotPassword1Widget.routeName,
+          path: Auth3ForgotPassword1Widget.routePath,
+          builder: (context, params) => Auth3ForgotPassword1Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -328,7 +410,7 @@ class FFRoute {
                       color: FlutterFlowTheme.of(context).primary,
                       child: Center(
                         child: Image.asset(
-                          'assets/images/Group_6_(2).png',
+                          'assets/images/Group_10.png',
                           width: 300.0,
                           height: 300.0,
                           fit: BoxFit.cover,
