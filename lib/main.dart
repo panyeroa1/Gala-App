@@ -150,7 +150,10 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
+      'Spot': SpotWidget(),
+      'Wishlist': WishlistWidget(),
       'Home': HomeWidget(),
+      'Booking': BookingWidget(),
       'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -172,6 +175,22 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.travel_explore,
+              size: 28.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite_outlined,
+              size: 28.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.directions_car,
               size: 32.0,
             ),
@@ -180,8 +199,16 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.calendar_month,
+              size: 28.0,
+            ),
+            label: 'booking',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.location_history,
-              size: 32.0,
+              size: 28.0,
             ),
             label: 'Profile',
             tooltip: '',

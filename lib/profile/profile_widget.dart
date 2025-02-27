@@ -156,19 +156,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   builder: (context) => Text(
                                     valueOrDefault<String>(
                                       currentUserDisplayName,
-                                      'Guest',
+                                      'Gala Guest!',
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineSmallFamily,
+                                          fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                           useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily),
+                                              .containsKey('Poppins'),
                                         ),
                                   ),
                                 ),
@@ -572,7 +568,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       width: double.infinity,
                       height: 60.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: FlutterFlowTheme.of(context).tertiary,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 5.0,
@@ -583,7 +579,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(25.0),
+                        borderRadius: BorderRadius.circular(12.0),
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(

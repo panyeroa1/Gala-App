@@ -219,6 +219,56 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: Auth3ForgotPassword1Widget.routeName,
           path: Auth3ForgotPassword1Widget.routePath,
           builder: (context, params) => Auth3ForgotPassword1Widget(),
+        ),
+        FFRoute(
+          name: HomepageWidget.routeName,
+          path: HomepageWidget.routePath,
+          builder: (context, params) => HomepageWidget(),
+        ),
+        FFRoute(
+          name: Details41BookingWidget.routeName,
+          path: Details41BookingWidget.routePath,
+          builder: (context, params) => Details41BookingWidget(),
+        ),
+        FFRoute(
+          name: SpotWidget.routeName,
+          path: SpotWidget.routePath,
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Spot') : SpotWidget(),
+        ),
+        FFRoute(
+          name: Home18TravelWidget.routeName,
+          path: Home18TravelWidget.routePath,
+          builder: (context, params) => Home18TravelWidget(),
+        ),
+        FFRoute(
+          name: Onboarding02Widget.routeName,
+          path: Onboarding02Widget.routePath,
+          builder: (context, params) => Onboarding02Widget(),
+        ),
+        FFRoute(
+          name: WishlistWidget.routeName,
+          path: WishlistWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Wishlist')
+              : WishlistWidget(),
+        ),
+        FFRoute(
+          name: ChatAiScreenWidget.routeName,
+          path: ChatAiScreenWidget.routePath,
+          builder: (context, params) => ChatAiScreenWidget(),
+        ),
+        FFRoute(
+          name: List17NotificationsWidget.routeName,
+          path: List17NotificationsWidget.routePath,
+          builder: (context, params) => List17NotificationsWidget(),
+        ),
+        FFRoute(
+          name: BookingWidget.routeName,
+          path: BookingWidget.routePath,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Booking')
+              : BookingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
