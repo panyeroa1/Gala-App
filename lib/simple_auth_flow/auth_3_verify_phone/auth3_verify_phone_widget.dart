@@ -176,16 +176,14 @@ class _Auth3VerifyPhoneWidgetState extends State<Auth3VerifyPhoneWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
-                                              fontFamily:
+                                              fontFamily: 'Poppins',
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .displaySmallFamily,
+                                                      .primary,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmallFamily),
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey('Poppins'),
                                             ),
                                       ),
                                     ],
