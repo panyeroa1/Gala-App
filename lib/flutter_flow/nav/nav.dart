@@ -196,26 +196,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Auth3Create1Widget(),
         ),
         FFRoute(
-          name: Auth3Login1Widget.routeName,
-          path: Auth3Login1Widget.routePath,
-          builder: (context, params) => Auth3Login1Widget(),
-        ),
-        FFRoute(
-          name: Auth3Phone1Widget.routeName,
-          path: Auth3Phone1Widget.routePath,
-          builder: (context, params) => Auth3Phone1Widget(),
-        ),
-        FFRoute(
-          name: Auth3VerifyPhone1Widget.routeName,
-          path: Auth3VerifyPhone1Widget.routePath,
-          builder: (context, params) => Auth3VerifyPhone1Widget(
-            phoneNumber: params.getParam(
-              'phoneNumber',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
           name: Auth3ForgotPassword1Widget.routeName,
           path: Auth3ForgotPassword1Widget.routePath,
           builder: (context, params) => Auth3ForgotPassword1Widget(),

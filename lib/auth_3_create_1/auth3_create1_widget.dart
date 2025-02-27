@@ -172,31 +172,19 @@ class _Auth3Create1WidgetState extends State<Auth3Create1Widget>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 12.0, 0.0),
-                                        child: Icon(
-                                          Icons.flourescent_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 44.0,
-                                        ),
-                                      ),
                                       Text(
-                                        'flow.io',
+                                        'Gala',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
-                                              fontFamily:
+                                              fontFamily: 'Poppins',
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .displaySmallFamily,
+                                                      .primary,
                                               letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displaySmallFamily),
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey('Poppins'),
                                             ),
                                       ),
                                     ],
@@ -661,7 +649,7 @@ class _Auth3Create1WidgetState extends State<Auth3Create1Widget>
                                             text: 'Create Account',
                                             options: FFButtonOptions(
                                               width: 200.0,
-                                              height: 44.0,
+                                              height: 55.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
@@ -709,7 +697,7 @@ class _Auth3Create1WidgetState extends State<Auth3Create1Widget>
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              Auth3Login1Widget.routeName,
+                                              LoginWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -824,7 +812,7 @@ class _Auth3Create1WidgetState extends State<Auth3Create1Widget>
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             context.pushNamed(
-                                              Auth3Phone1Widget.routeName,
+                                              Auth3PhoneWidget.routeName,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -844,7 +832,7 @@ class _Auth3Create1WidgetState extends State<Auth3Create1Widget>
                                           ),
                                           options: FFButtonOptions(
                                             width: double.infinity,
-                                            height: 44.0,
+                                            height: 55.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),

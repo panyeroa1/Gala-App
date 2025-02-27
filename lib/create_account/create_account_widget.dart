@@ -38,7 +38,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed(Auth3Phone1Widget.routeName);
+      context.pushNamed(Auth3PhoneWidget.routeName);
     });
 
     _model.emailAddressTextController ??= TextEditingController();
